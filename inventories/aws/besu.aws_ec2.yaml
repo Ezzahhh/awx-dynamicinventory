@@ -8,8 +8,14 @@ strict_permissions: False
 hostnames:
   - tag:Name
 keyed_groups:
-- prefix: tag
-  key: tags
+- prefix: env
+  key: tags["owner"]
+- prefix: network
+  key: tags["network"]
+- prefix: owner
+  key: tags["owner"]
+- prefix: stream
+  key: tags["stream"]
 compose:
   ansible_host: public_dns_name
 # Can use IAM role in future to avoid IAM users and static passwords
