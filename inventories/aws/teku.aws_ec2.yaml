@@ -3,7 +3,7 @@ regions:
   - us-east-2
 filters:
   instance-state-name: running
-  tag:stack_type: besu
+  tag:stack_type: teku
 strict_permissions: False
 hostnames:
   - tag:Name
