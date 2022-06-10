@@ -1,0 +1,21 @@
+plugin: aws_ec2
+regions:
+  - us-east-2
+filters:
+  instance-state-name: running
+  tag:stack_type: besu
+  tag:Name: dev-besu-ohio-mainnet-eric123
+strict_permissions: False
+hostnames:
+  - tag:Name
+keyed_groups:
+- prefix: network
+  key: tags["network"]
+- prefix: owner
+  key: tags["owner"]
+- prefix: stream
+  key: tags["stream"]
+compose:
+  ansible_host: public_dns_name
+# Can use IAM role in future to avoid IAM users and static passwords
+#iam_role_arn: "asdfas"
