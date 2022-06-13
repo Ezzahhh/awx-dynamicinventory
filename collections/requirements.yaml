@@ -2,4 +2,3 @@
 collections:
   - name: amazon.aws
   - name: geerlingguy.packer
-    version: 1.0.2
