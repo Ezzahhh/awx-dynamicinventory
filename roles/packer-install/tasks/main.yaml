@@ -1,3 +1,2 @@
-- hosts: localhost
-  roles:
-    - geerlingguy.packer
+- include_role:
+    name: 'geerlingguy.packer'
