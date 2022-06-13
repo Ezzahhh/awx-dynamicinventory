@@ -1,4 +1,16 @@
 ---
 - hosts: localhost
+  gather_facts: no
   roles:
-    - packer-install
+    - role: geerlingguy.packer
+      packer_version: "1.8.1"
+      packer_arch: "amd64"
+      packer_bin_path: /usr/local/bin
+
+  tasks:
+    - name: Check packer version
+      ansible.builtin.shell: 
+        cmd: packer version
+      register: result
+    - debug: msg={{ result.stdout }}
+    - debug: var=result

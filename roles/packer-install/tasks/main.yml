@@ -1,4 +1,0 @@
-
-- name: Check packer version
-  ansible.builtin.shell: 
-    cmd: packer version
